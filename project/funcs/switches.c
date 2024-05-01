@@ -36,23 +36,23 @@ void sw_interrupt_handler()
   char button3 = (p2Value & S3) ? 0 : S3;
   char button4 = (p2Value & S4) ? 0 : S4;
 
-  if (button_1)
+  if (button1)
     {
       next_state(1);
       stateDown = 1;
     }
-  else if (button_2)
+  else if (button2)
     {
       next_state(2);
       stateDown = 1;
     }
-  else if (button_3)
+  else if (button3)
     {
       next_state(3);
       stateDown = 1;
     }
 
-  else if (button_4)
+  else if (button4)
     {
       next_state(4);
       stateDown = 1;
