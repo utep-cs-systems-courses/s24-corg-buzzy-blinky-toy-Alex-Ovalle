@@ -4,10 +4,9 @@
 #include "switches.h"
 #include "buzzer.h"
 
-int main(void)
-{
+int main(void){
   configureClocks();
-  switch_init(); // Initializing Switches
+  sw_init(); // Initializing Switches
   led_init(); // Initializing LED
   buzzer_init(); // Initializing Buzzer
 
