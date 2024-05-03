@@ -21,46 +21,15 @@ void buzz_set_period(short cycles){
 
 
 void super_mario(){
-  int melody[] = {
-    E5, E5, P, E5, P, C5, E5, P, G5, P, G4, P,
-    C5, P, G4, P, E4, P, A4, P, B4, P, Bb4, A4,
-    G4, E5, G5, A5, F5, G5, P, E5, C5, D5, B4,
-    P, C5, P, G4, P, E4, P, A4, P, B4, P, Bb4,
-    A4, G4, E5, G5, A5, F5, G5, P, E5, C5, D5,
-    B4, P, C5, P, G4, P, E4, P, E5, E5, P, E5,
-    P, C5, E5, P, G5, P, G4, P, C5, P, G4, P,
-    E4, P, A4, P, B4, P, Bb4, A4, G4, E5, G5,
-    A5, F5, G5, P, E5, C5, D5, B4, P, C5, P,
-    G4, P, E4, P, A4, P, B4, P, Bb4, A4, G4,
-    E5, G5, A5, F5, G5, P, E5, C5, D5, B4, P,
-    C5, P, G4, P, E4, P
-  };
-  
-  int noteDurations[] = {
-    8, 8, 4, 8, 4, 8, 8, 4, 8, 4, 8, 4,
-    8, 4, 8, 4, 8, 4, 8, 4, 8, 4, 4, 4,
-    4, 8, 8, 8, 4, 4, 8, 8, 8, 4, 8, 4,
-    8, 4, 8, 4, 8, 4, 8, 4, 8, 4, 4, 4,
-    4, 8, 8, 8, 4, 4, 8, 8, 8, 4, 8, 4,
-    8, 4, 8, 4, 8, 4, 8, 8, 4, 8, 4, 8,
-    4, 8, 4, 8, 4, 8, 4, 4, 4, 4, 8, 8,
-    8, 4, 4, 8, 8, 8, 4, 8, 4, 8, 4, 8,
-    4, 8, 4, 8, 4, 8, 4, 4, 4, 4, 8, 8,
-    8, 4, 4, 8, 8, 8, 4, 8, 4, 8, 4, 8,
-    4, 8, 4, 8, 4, 8, 4, 4, 4
-  };
-  
-  int pauseDuration = 100;
-  
-  for (int i = 0; i < sizeof(melody) / sizeof(melody[0]); i++) {
-    int duration = 1000 / noteDurations[i];
-    if (melody[i] == P) {
-      delay_ms(pauseDuration);
-    } else {
-      buzz_set_period(melody[i]);
-      delay_ms(duration);
-      buzz_set_period(0);
-    }
-    delay_ms(pauseDuration / 2);
+
+  int notes[] = {E5,E5,E5,C5,E5,G5,bk,G5,bk,C5,G5,E5,A5,B5,Bb5,A5,G5,E5,G5,A5,F5,G5,E5,C5,D5,B5};
+
+  for(int i = 0; i < 26; i++)
+  {
+    buzz_set_period(notes[i]);
+    __delay_cycles(2500000);
+    buzz_set_period(0);
+    __delay_cycles(2500000);
   }
-}   
+  buzz_set_period(0);
+}
