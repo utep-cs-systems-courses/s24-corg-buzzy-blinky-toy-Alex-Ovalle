@@ -11,6 +11,7 @@ void green_on();
 void green_off();
 void red_on();
 void red_off();
-void flash();
+void led_flash(int n);
+void leds_off();
 
 #endif

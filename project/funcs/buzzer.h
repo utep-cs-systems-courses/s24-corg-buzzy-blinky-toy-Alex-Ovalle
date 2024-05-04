@@ -3,6 +3,7 @@
 
 void buzz_init();
 void buzz_set_period(short cycles);
-void super_mario();
+void tloz();
+void tg_intro();
 
 #endif

@@ -23,13 +23,23 @@ void led_update() {
   }
 }
 
-void green_led_on() {
+void green_on() {
   P1OUT |= RED_LED;
   __delay_cycles(500000);
 }
 
-void red_led_on(){
+void red_on(){
   P1OUT |= GREEN_LED;
+  __delay_cycles(500000);
+}
+
+void red_off(){
+  P1OUT &= ~RED_LED;
+  __delay_cycles(500000);
+}
+
+void green_off(){
+  P1OUT &= ~GREEN_LED;
   __delay_cycles(500000);
 }
 

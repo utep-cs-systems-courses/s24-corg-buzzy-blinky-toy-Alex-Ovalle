@@ -11,14 +11,30 @@ void next_state(int state) {
 
   switch(state) {
   case 1:
-    flash(3);
+    led_flash(5);
+    red_on();
+    green_on();
+    tloz();
+    red_off();
+    green_off();
+    break;
+  case 2:
+    red_on();
+    tg_intro();
+    led_flash(2);
+    red_off();
+    break;
+  case 3:
+    led_flash(9);
+    break;
+  case 4:
+    green_on();
     green_off();
     red_on();
     green_on();
-    super_mario();
     red_off();
+    green_off();
     break;
-
   default:
     green_on();
     break;

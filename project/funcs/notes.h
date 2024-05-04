@@ -20,3 +20,8 @@
 #define E6 1318
 #define bk 0
 #define D4 293
+#define B3 247
+#define E3 165
+#define G3 196
+#define AS3 233
+#define B4 494
